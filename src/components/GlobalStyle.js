@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
 body {
     background: #1b1b1b;
+    font-family: 'Roboto', sans-serif;
 }
 
 button {
@@ -22,6 +23,7 @@ button {
     background: transparent;
     color: #fff;
     transition: all .5s ease;
+    font-family: 'Roboto', sans-serif;
 
     &:focus {
         outline: none;
