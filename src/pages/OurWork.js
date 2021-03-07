@@ -7,9 +7,10 @@ import goodtimesSmall from '../images/goodtimes-small.png'
 import theracerSmall from '../images/theracer-small.png'
 
 import { motion } from "framer-motion";
-import { pageAnimation } from "../animation";
+import { pageAnimation, fadeAnim, photoAnim, lineAnim, sliderAnim,sliderContainerAnim } from "../animation";
 
-const OurWork = () => {
+
+const OurWork = () => { 
     return (
         <StyledWork 
             variants={pageAnimation} 
@@ -18,11 +19,25 @@ const OurWork = () => {
             exit="exit"
             style={{background: "#fff"}}
         >
+            <motion.div variants={sliderContainerAnim}>
+                <StyledFrame1 variants={sliderAnim}></StyledFrame1>
+                <StyledFrame2 variants={sliderAnim}></StyledFrame2>
+                <StyledFrame3 variants={sliderAnim}></StyledFrame3>
+                <StyledFrame4 variants={sliderAnim}></StyledFrame4>
+            </motion.div>
+            
+
             <StyledMovie>
-                <h2>The Athlete</h2>
-                <div className="line"></div>
+                <motion.h2 variants={fadeAnim}>The Athlete</motion.h2>
+                <motion.div variants={lineAnim} className="line"></motion.div>
                 <Link to="/work/the-athlete">
-                    <img src={athleteSmall} alt="athleteSmall"/>
+                    <StyledHide>
+                        <motion.img 
+                            variants={photoAnim} 
+                            src={athleteSmall} 
+                            alt="athleteSmall"
+                        />
+                    </StyledHide>
                 </Link>
             </StyledMovie>
             <StyledMovie>
@@ -58,7 +73,7 @@ const StyledMovie = styled.div`
 
     .line {
         height: 0.5rem;
-        background: #ccc;
+        background: #23d997;
         margin-bottom: 3rem;
     }
 
@@ -67,6 +82,33 @@ const StyledMovie = styled.div`
         height: 70vh;
         object-fit: cover;
     }
+`
+
+const StyledHide = styled(motion.div)`
+    overflow: hidden;
+`
+
+// Frame Animation
+const StyledFrame1 = styled(motion.div)`
+    position: fixed;
+    left: 0;
+    top: 10%;
+    width: 100%;
+    height: 100vh;
+    background: #fffebf;
+    z-index: 2;
+`
+
+const StyledFrame2 = styled(StyledFrame1)`
+    background: #ff8efb;
+`
+
+const StyledFrame3 = styled(StyledFrame1)`
+    background: #8ed2ff;
+`
+
+const StyledFrame4 = styled(StyledFrame1)`
+    background: #8effa0;
 `
 
 export default OurWork
