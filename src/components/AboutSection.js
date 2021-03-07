@@ -2,7 +2,9 @@ import React from 'react'
 import home1 from '../images/home1.png';
 
 import { StyledBase, StyledDescription, StyledImage, StyledHide } from "../styles";
+
 import { motion } from "framer-motion";
+import { titleAnim, fadeAnim, photoAnim } from "../animation";
 
 const AboutSection = () => {
 
@@ -11,28 +13,30 @@ const AboutSection = () => {
             <StyledDescription>
                 <motion.div >
                     <StyledHide>
-                        <motion.h2>
+                        <motion.h2 variants={titleAnim}>
                             We work to make
                         </motion.h2>
                     </StyledHide>
                     <StyledHide>
-                        <motion.h2>
+                        <motion.h2 variants={titleAnim}>
                             Your <span>dreams</span> come
                         </motion.h2>
                     </StyledHide>
                     <StyledHide>
-                        <motion.h2>
+                        <motion.h2 variants={titleAnim}>
                             true.
                         </motion.h2>
                     </StyledHide>
-                    <p>
+                    <motion.p variants={fadeAnim}>
                         Contact us for any photography or videography ideas that you have. We have professionals with amazing skills to help you achieve it.
-                    </p>
-                    <button>Contact Us</button>
+                    </motion.p>
+                    <motion.button variants={fadeAnim}>
+                        Contact Us
+                    </motion.button>
                 </motion.div>
             </StyledDescription>
             <StyledImage>
-                <img src={home1} alt="The guy with cammera"/>
+                <motion.img variants={photoAnim} src={home1} alt="The guy with cammera"/>
             </StyledImage>
         </StyledBase>
     )
