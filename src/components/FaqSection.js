@@ -1,44 +1,43 @@
 import React from 'react'
 
+import Toggle from './Toggle'
+
 import styled from 'styled-components';
 import { StyledBase } from "../styles";
+
+import { AnimateSharedLayout } from "framer-motion";
 
 const FaqSection = () => {
     return (
         <StyledFaq>
             <h2>Any Questions <span>FAQ</span> </h2>
-            <div className="question">
-                <h4>How do I start?</h4>
-                <div className="answers">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, corrupti!</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>Daily Schedule</h4>
-                <div className="answers">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, corrupti!</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>Different Payment Methods</h4>
-                <div className="answers">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, corrupti!</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>What product do you offer?</h4>
-                <div className="answers">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, corrupti!</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
+
+            <AnimateSharedLayout>
+                <Toggle title="How do I start?">
+                    <div className="answers">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, corrupti!</p>
+                    </div>
+                </Toggle>
+                <Toggle title="Daily Schedule">
+                    <div className="answers">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, corrupti!</p>
+                    </div>
+                </Toggle>
+                <Toggle title="Different Payment Methods">
+                    <div className="answers">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, corrupti!</p>
+                    </div>
+                </Toggle>
+                <Toggle title="What product do you offer?">
+                    <div className="answers">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, corrupti!</p>
+                    </div>
+                </Toggle>
+            </AnimateSharedLayout>
         </StyledFaq>
     )
 }
@@ -68,10 +67,10 @@ const StyledFaq = styled(StyledBase)`
     }
 
     .answers {
-        padding: 2rem 0;
+        padding: .5rem 0;
 
         p {
-            padding: 1rem 0;
+            padding: .5rem 0;
         }
     }
 `
