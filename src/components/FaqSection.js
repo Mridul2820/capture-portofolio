@@ -6,10 +6,19 @@ import styled from 'styled-components';
 import { StyledBase } from "../styles";
 
 import { AnimateSharedLayout } from "framer-motion";
+import { fadeAnim } from "../animation";
+import { useScroll } from "./useScroll";
 
 const FaqSection = () => {
+    const [element, controls] = useScroll()
+
     return (
-        <StyledFaq>
+        <StyledFaq 
+            variants={fadeAnim}
+            animate={controls} 
+            initial="hidden" 
+            ref={element} 
+        >
             <h2>Any Questions <span>FAQ</span> </h2>
 
             <AnimateSharedLayout>

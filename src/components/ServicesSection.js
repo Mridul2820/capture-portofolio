@@ -4,16 +4,24 @@ import clock from '../images/clock.svg'
 import diaphragm from '../images/diaphragm.svg'
 import money from '../images/money.svg'
 import teamwork from '../images/teamwork.svg'
-
 import home2 from '../images/home2.png'
 
 import styled from 'styled-components';
 import { StyledBase, StyledDescription, StyledImage } from "../styles";
 
+import { scrollRevealAnim } from "../animation";
+import { useScroll } from "./useScroll";
 
 const ServicesSection = () => {
+    const [element, controls] = useScroll()
+
     return (
-        <StyledServices>
+        <StyledServices 
+            variants={scrollRevealAnim}
+            animate={controls} 
+            initial="hidden" 
+            ref={element} 
+        >
             <StyledDescription>
                 <h2>High <span>Quality</span> Services </h2>
                 <StyledCards>
