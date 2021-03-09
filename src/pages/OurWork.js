@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
+import ScrollTop from '../components/ScrollTop'
+
 import athleteSmall from '../images/athlete-small.png'
 import goodtimesSmall from '../images/goodtimes-small.png'
 import theracerSmall from '../images/theracer-small.png'
@@ -69,6 +71,7 @@ const OurWork = () => {
                     <img src={theracerSmall} alt="theracerSmall"/>
                 </Link>
             </StyledMovie>
+            <ScrollTop />
         </StyledWork>
     )
 }

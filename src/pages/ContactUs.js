@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollTop from '../components/ScrollTop'
 
 import { motion } from "framer-motion";
 import { pageAnimation, titleAnim } from "../animation";
@@ -13,6 +14,7 @@ const ContactUs = () => {
             exit="exit"
             style={{background: "#fff"}}
         >
+            <ScrollTop />
             <StyledTitle>
                 <StyledHide>
                     <motion.h2 variants={titleAnim}>
