@@ -14,6 +14,10 @@ const Award = ({ title, description }) => {
 const StyleAward = styled.div`
     padding: 2rem;
 
+    @media (max-width: 1000px) {
+        width: 270px;
+    }
+
     h3 {
         font-size: 1.8rem;
     }

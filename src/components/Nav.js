@@ -40,12 +40,32 @@ const StyledNav = styled.nav`
         li {
             position: relative;
             padding-left: 5rem;
+
+            @media (max-width: 600px) {
+                padding-left: 2rem;
+            }
+
+            @media (max-width: 400px) {
+                padding-left: 1rem;
+            }
         }
     }
 
     .logo {
         font-size: 1.5rem;
         font-family: 'Lobster', cursive;
+    }
+
+    @media (max-width: 800px) {
+        padding: 1rem 5rem;
+    }
+
+    @media (max-width: 600px) {
+        padding: 1rem 2rem;
+    }
+
+    @media (max-width: 600px) {
+        padding: 1rem;
     }
 `
 

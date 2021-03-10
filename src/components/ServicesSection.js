@@ -69,16 +69,27 @@ const StyledServices = styled(StyledBase)`
     h2 {
         padding-bottom: 5rem;
     }
-
-    p {
-        width: 70%;
-        padding: 2rem 0 4rem 0;
-    }
 `
 
 const StyledCards = styled.div`
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+
+    @media (max-width: 1300px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (max-width: 1000px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 375px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 `
 
 const StyledCard = styled.div`
@@ -87,12 +98,31 @@ const StyledCard = styled.div`
     .icon {
         display: flex;
         align-items: center;
+        justify-content: center;
+
+        img {
+            @media (max-width: 600px) {
+                width: 35px;
+            }
+        }
 
         h3 {
             margin-left: 1rem;
             background: #fff;
             color: #000;
             padding: 1rem;
+
+            @media (max-width: 600px) {
+                padding: .5rem 1rem;
+            }
+        }
+    }
+
+    p {
+        padding: 2rem 0 4rem 0;
+
+        @media (max-width: 600px) {
+            font-size: 15px;
         }
     }
 `

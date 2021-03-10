@@ -83,6 +83,11 @@ const StyleAwards = styled.div`
     margin: 5rem 7rem;
     align-items: center;
     justify-content: space-around;
+
+    @media (max-width: 1000px) {
+        margin: 2rem 2rem;
+        flex-wrap: wrap;
+    }
 `
 
 const StyleImageDisplay = styled.div`

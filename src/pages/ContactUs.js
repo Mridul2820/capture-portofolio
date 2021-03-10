@@ -51,6 +51,10 @@ const StyledContact = styled(motion.div)`
     padding: 5rem 10rem;
     color: #353535;
     min-height: 90vh;
+
+    @media (max-width: 1300px) {
+        padding: 2rem;
+    }
 `
 
 const StyledTitle = styled.div`
@@ -66,6 +70,11 @@ const StyledCircle = styled.div`
     width: 2rem;
     height: 2rem;
     background: #353535;
+
+    @media (max-width: 600px) {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
 `
 const StyledSocial = styled(motion.div)`
     display: flex;
@@ -73,6 +82,10 @@ const StyledSocial = styled(motion.div)`
 
     h2 {
         margin: 1rem;
+
+        @media (max-width: 600px) {
+            font-size: 1.8rem;
+        }
     }
 `
 

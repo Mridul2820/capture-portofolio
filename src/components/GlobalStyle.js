@@ -9,6 +9,15 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    html {
+        @media (max-width: 1500px) {
+            font-size: 75%;
+        }
+
+        @media (max-width: 1300px) {
+        }
+    }
+
     body {
         background: #1b1b1b;
         font-family: 'Roboto', sans-serif;
